@@ -6,8 +6,8 @@ The **Banking Management System** is a Java-based application designed to facili
 
 ## Features
 
-- **Account Management**: Create, update, and delete customer accounts.
-- **Transactions**: Perform deposits, withdrawals.
+- **Account Management**: Create, update.
+- **Transactions**: Perform deposits.
 - **Account Statements**: Generate and view detailed account statements for customers.
 
 ## Technologies Used
@@ -39,8 +39,74 @@ git clone https://github.com/Irphan1305/Banking-Management-System.git
 
 ### 3. Configure the Database
 
-- Create a new MySQL database named `banking_system`.
-- Import the database schema and initial data from the `database` directory provided in the repository.
+- Create a new MySQL database named `bankSystem`.
+- Execute the following SQL commands to set up the required tables:
+
+```sql
+CREATE DATABASE bankSystem;
+USE bankSystem;
+
+CREATE TABLE signup (
+    form_no VARCHAR(30), 
+    name VARCHAR(30), 
+    father_name VARCHAR(30), 
+    DOB VARCHAR(30), 
+    gender VARCHAR(30), 
+    email VARCHAR(60), 
+    marital_status VARCHAR(30), 
+    address VARCHAR(60), 
+    city VARCHAR(30), 
+    pincode VARCHAR(30), 
+    state VARCHAR(50)
+);
+SELECT * FROM signup;
+
+CREATE TABLE signuptwo (
+    form_no VARCHAR(30), 
+    religion VARCHAR(30), 
+    category VARCHAR(30), 
+    income VARCHAR(30), 
+    education VARCHAR(30), 
+    occuption VARCHAR(60), 
+    pan VARCHAR(30), 
+    aadhar VARCHAR(60), 
+    seniorcitizen VARCHAR(30), 
+    existing_account VARCHAR(30)
+);
+SELECT * FROM signuptwo;
+
+CREATE TABLE signupthree (
+    form_no VARCHAR(30), 
+    account_Type VARCHAR(40), 
+    Card_number VARCHAR(30), 
+    pin VARCHAR(30), 
+    facility VARCHAR(200)
+);
+SELECT * FROM signupthree;
+
+CREATE TABLE login (
+    form_no VARCHAR(30), 
+    Card_number VARCHAR(30), 
+    pin VARCHAR(30)
+);
+SELECT * FROM login;
+
+CREATE TABLE bank (
+    pin VARCHAR(10), 
+    date VARCHAR(50), 
+    type VARCHAR(20), 
+    amount VARCHAR(20)
+);
+SELECT * FROM bank;
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM login;
+DELETE FROM bank;
+DELETE FROM signup;
+DELETE FROM signuptwo;
+DELETE FROM signupthree;
+```
+
 - Update the database connection settings in the application to match your MySQL server configuration.
 
 ### 4. Build and Run the Application
@@ -77,4 +143,3 @@ Contributions are welcome! To contribute:
 
 This project is open-source and available under the [MIT License](LICENSE).
 
----
