@@ -7,7 +7,7 @@ The **Banking Management System** is a Java-based application designed to facili
 ## Features
 
 - **Account Management**: Create, update, and delete customer accounts.
-- **Transactions**: Perform deposits, withdrawals, and fund transfers between accounts.
+- **Transactions**: Perform deposits, withdrawals.
 - **Account Statements**: Generate and view detailed account statements for customers.
 
 ## Technologies Used
